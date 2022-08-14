@@ -22,7 +22,7 @@ const LinkResult = ({ inputValue }) => {
   
   useEffect(() => {
 
-        if(inputValue){
+        if(inputValue?.length){
             fetchData();
         }
     }, [inputValue]);
