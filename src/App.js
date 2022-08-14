@@ -7,7 +7,7 @@ import LinkResult from './LinkResult';
 
 
 function App() {
-  const [inputvalue, setInputValue] = useState("");
+  const [inputvalue, setInputValue] = useState("sczxzx");
 
   return (
     <div className="container">

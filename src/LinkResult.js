@@ -2,7 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import CopyToClipboard from "react-copy-to-clipboard";
 
-const LinkResult = ({ inputValue }) => {
+const LinkResult = ( inputValue ) => {
+console.log(inputValue);
   const [shortenLink, setShortenLink] = useState("");
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -11,7 +12,7 @@ const LinkResult = ({ inputValue }) => {
   const fetchData = async () => {
     try {
         setLoading(true);
-        const res = await axios(`https://api.shrtco.de/v2/shorten?url=${inputValue}`);
+        const res = await axios(`https://api.shrtco.de/v2/shorten?url=${{inputValue}}`);
         setShortenLink(res.data.result.full_short_link);
         } catch(err) {
             setError(err);
@@ -24,7 +25,7 @@ const LinkResult = ({ inputValue }) => {
 
         if(inputValue?.length){
             fetchData();
-        }
+        }// eslint-disable-next-line
     }, [inputValue]);
 
     useEffect(() => {
